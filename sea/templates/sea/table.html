@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load bootstrap5 %}
+
+{% block title %}
+    Servicio de Evaluación Ambiental
+{% endblock %}
+
+{% block content %}
+
+    <table class="table">
+        <thead>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Inversión MMU$</th>
+            <th>Fecha</th>
+        </thead>
+        {% for seia in qs %}
+            <tr>
+                <td>{{ seia.nombre }}</td>
+                <td>{{ seia.tipo }}</td>
+                <td>{{ seia.inversion }}</td>
+                <td>{{ seia.fecha }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    {% bootstrap_pagination qs url="/seia?page=1" size="small" %}
+
+{% endblock %}

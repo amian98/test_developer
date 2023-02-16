@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'bike.apps.BikeConfig',
     'sea.apps.SeaConfig',
 
+    
+    "bootstrap5",
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,7 +69,7 @@ ROOT_URLCONF = 'test_developer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['test_developer/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

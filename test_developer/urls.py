@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from bike.views import bikesTable
+from sea.views import seiaTable
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('bike/',bikesTable),
+    path('seia/',seiaTable),
 ]

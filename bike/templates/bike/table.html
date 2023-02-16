@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load bootstrap5 %}
+
+{% block title %}
+    Bike Santiago
+{% endblock %}
+
+{% block content %}
+
+    <table class="table">
+        <thead>
+            <th>Nombre</th>
+            <th>Latitud</th>
+            <th>Longitud</th>
+            <th>Bicis Libres</th>
+            <th>Espacios Vacíos</th>
+            <th>Fecha y Hora</th>
+        </thead>
+        {% for station in qs %}
+            <tr>
+                <td>{{ station.name }}</td>
+                <td>{{ station.latitude }}</td>
+                <td>{{ station.longitude }}</td>
+                <td>{{ station.free_bikes }}</td>
+                <td>{{ station.empty_slots }}</td>
+                <td>{{ station.timestamp }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    {% bootstrap_pagination qs url="/bike?page=1" size="small" %}
+
+{% endblock %}
