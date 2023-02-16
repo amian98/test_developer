@@ -31,6 +31,12 @@ class Extra(models.Model):
     slots = models.IntegerField()
     uid = models.IntegerField()
 
+    def __str__(self) -> str:
+        return self.station.name + ', ' + self.address
+
 class Payment(models.Model):
     station = models.ForeignKey(Station, on_delete=models.CASCADE)
     payment_method = models.CharField(max_length=50)
+
+    def __str__(self) -> str:
+        return self.station.name + ', ' + self.payment_method

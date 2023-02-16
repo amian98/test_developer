@@ -5,6 +5,8 @@ from .models import *
 
 class PaymentInline(admin.StackedInline):
     model=Payment
+
+    extra=0
     
 
 class ExtraInline(admin.StackedInline):

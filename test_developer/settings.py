@@ -41,6 +41,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'bike.apps.BikeConfig',
+    'sea.apps.SeaConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
